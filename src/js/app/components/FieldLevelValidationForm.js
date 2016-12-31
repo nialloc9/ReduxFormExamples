@@ -17,17 +17,6 @@ class FieldLevelValidationForm extends Component{
     //set field warning
     const cool = value => value && value == 'cool' ? 'Super Cool' : undefined
 
-    //create custom component
-    const renderField = ({ input, label, type, customClass, meta: { touched, error, warning } }) => (
-      <div>
-        <label>{label}</label>
-        <div>
-          <input className={customClass}{...input} placeholder={label} type={type}/>
-          {touched && ((error && <span className='infoDanger'>{error}</span>) || (warning && <span className='infoWarning'>{warning}</span>))}
-        </div>
-      </div>
-    )
-
     return(
       <form onSubmit={handleSubmit}>
         <div>
@@ -58,6 +47,16 @@ class FieldLevelValidationForm extends Component{
   }
 }
 
+//create custom component
+const renderField = ({ input, label, type, customClass, meta: { touched, error, warning } }) => (
+  <div>
+    <label>{label}</label>
+    <div>
+      <input className={customClass}{...input} placeholder={label} type={type}/>
+      {touched && ((error && <span className='infoDanger'>{error}</span>) || (warning && <span className='infoWarning'>{warning}</span>))}
+    </div>
+  </div>
+)
 
 export default reduxForm({
   form: 'fieldLevelValidation'
