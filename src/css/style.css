@@ -16,3 +16,11 @@
   margin: 2%;
   background-color: aliceblue;
 }
+
+.infoDanger{
+  color: red;
+}
+
+.infoWarning{
+  color: yellow;
+}
