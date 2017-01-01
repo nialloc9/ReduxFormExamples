@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 //import forms
 import FieldLevelValidationForm from '../components/FieldLevelValidationForm'
 import SimpleForm from '../components/SimpleForm'
+import SubmitValidationForm from '../components/SubmitValidationForm'
 import SynchronousValidationForm from '../components/SynchronousValidationForm'
 
 class Main extends Component{
@@ -18,7 +19,12 @@ class Main extends Component{
   }
 
   synchronousValidationHandleSubmit = function(values){
-    console.log("SYNCHRONOYS VALIDATION FORM:")
+    console.log("SYNCHRONOUS VALIDATION FORM:")
+    console.log(values)
+  }
+
+  submitValidationHandleSubmit = function(values){
+    console.log("SUBMIT VALIDATION FORM:")
     console.log(values)
   }
 
@@ -51,6 +57,7 @@ class Main extends Component{
 
           <div className='col-sm-5 formArea'>
             <h3>Submit Validation</h3>
+            <SubmitValidationForm onSubmit={this.submitValidationHandleSubmit.bind(this)}/>
           </div>
         </div>
 

@@ -21,6 +21,8 @@ class SynchronousValidationForm extends Component{
           <Field label='Age' name='age' type='number' component={renderField} customClass='form-control'/>
         </div>
 
+        <hr />
+
         <div>
           <button className='btn btn-primary' type='submit'>Submit</button>
           <button className='btn btn-default' type='button' onClick={reset}>Reset</button>
