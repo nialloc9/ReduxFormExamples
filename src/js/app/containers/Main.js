@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 //import forms
+import AsyncBlurValidationForm from '../components/AsyncBlurValidationForm'
 import FieldLevelValidationForm from '../components/FieldLevelValidationForm'
 import SimpleForm from '../components/SimpleForm'
 import SubmitValidationForm from '../components/SubmitValidationForm'
@@ -25,6 +26,11 @@ class Main extends Component{
 
   submitValidationHandleSubmit = function(values){
     console.log("SUBMIT VALIDATION FORM:")
+    console.log(values)
+  }
+
+  asyncBlurValidationHandleSubmit = (values) => {
+    console.log("ASYNC BLUE VALIDATION FORM:")
     console.log(values)
   }
 
@@ -64,6 +70,7 @@ class Main extends Component{
         <div className='row'>
           <div className='col-sm-5 formArea'>
             <h3>Blur validation</h3>
+            <AsyncBlurValidationForm onSubmit={this.asyncBlurValidationHandleSubmit.bind(this)}/>
           </div>
 
           <div className='col-sm-1'>{/*White space*/}</div>

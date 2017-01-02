@@ -3,11 +3,11 @@ import React, { Component } from 'react'
 //reduxForm
 import { Field, reduxForm, SubmissionError } from 'redux-form'
 
-//submit validation function
+//set timeout promise
 const sleep = millSec => new Promise(resolve => setTimeout(resolve, millSec))
 
-
-const submit = function(values){
+//submit validation function
+const submit = (values)=>{
   //simulate server latency
   return sleep(2000).then(()=>{
     if(['nialloc9@gmail.com', 'info@ocwebtech.com'].includes(values.email)){
