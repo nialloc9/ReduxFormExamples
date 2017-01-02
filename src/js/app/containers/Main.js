@@ -6,6 +6,7 @@ import FieldLevelValidationForm from '../components/FieldLevelValidationForm'
 import SimpleForm from '../components/SimpleForm'
 import SubmitValidationForm from '../components/SubmitValidationForm'
 import SynchronousValidationForm from '../components/SynchronousValidationForm'
+import WizardForm from '../components/WizardForm'
 
 class Main extends Component{
 
@@ -29,8 +30,8 @@ class Main extends Component{
     console.log(values)
   }
 
-  asyncBlurValidationHandleSubmit = (values) => {
-    console.log("ASYNC BLUE VALIDATION FORM:")
+  wizardFormHandleSubmit = function(values){
+    console.log("WIZARD FORM:")
     console.log(values)
   }
 
@@ -70,13 +71,14 @@ class Main extends Component{
         <div className='row'>
           <div className='col-sm-5 formArea'>
             <h3>Blur validation</h3>
-            <AsyncBlurValidationForm onSubmit={this.asyncBlurValidationHandleSubmit.bind(this)}/>
+            <AsyncBlurValidationForm />
           </div>
 
           <div className='col-sm-1'>{/*White space*/}</div>
 
           <div className='col-sm-5 formArea'>
             <h3>Wizard Form</h3>
+            <WizardForm onSubmit={this.wizardFormHandleSubmit.bind(this)}/>
           </div>
         </div>
       </div>
